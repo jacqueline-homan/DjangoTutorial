@@ -22,3 +22,8 @@ class Choice(models.Model):
 
 	def __str__(self):
 		return self.choice_text
+
+class Hello(models.Model):
+	salute = models.CharField(max_length=100)
+	def __str__(self):
+		return self.salute

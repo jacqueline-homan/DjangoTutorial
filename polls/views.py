@@ -41,3 +41,7 @@ def vote(request, question_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
+
+class HelloView(generic.DetailView):
+    model = Hello
+    template_name = 'polls/hello_world.html'
