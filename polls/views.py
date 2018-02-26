@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views import generic
 
-from .models import Choice, Question
+from .models import Choice, Question, Hello
 
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'
@@ -42,6 +42,6 @@ def vote(request, question_id):
         # user hits the Back button.
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
 
-class HelloView(generic.DetailView):
-    model = Hello
-    template_name = 'polls/hello_world.html'
+class HelloView(generic.TemplateView):
+    #model = Question
+    template_name = 'polls/hello.html'
